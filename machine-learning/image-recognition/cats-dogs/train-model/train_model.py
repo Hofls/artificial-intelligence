@@ -72,7 +72,7 @@ def createNewModel(IMG_HEIGHT, IMG_WIDTH):
         Dropout(0.2),
         Flatten(),
         Dense(512, activation='relu'),
-        Dense(1)
+        Dense(2) # Replaceable (number of classes)
     ])
 
     model.compile(optimizer='adam',
@@ -109,12 +109,12 @@ def trainModel(train_dir, validation_dir, dirTotal):
                                                                directory=train_dir,
                                                                shuffle=True,
                                                                target_size=(IMG_HEIGHT, IMG_WIDTH),
-                                                               class_mode='binary')
+                                                               class_mode='categorical')
 
     val_data_gen = validation_image_generator.flow_from_directory(batch_size=batch_size,
                                                                   directory=validation_dir,
                                                                   target_size=(IMG_HEIGHT, IMG_WIDTH),
-                                                                  class_mode='binary')
+                                                                  class_mode='categorical')
 
     sample_training_images, _ = next(train_data_gen)
 

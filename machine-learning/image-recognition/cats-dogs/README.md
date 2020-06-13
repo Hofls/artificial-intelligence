@@ -13,6 +13,9 @@
 * Continue training of existing model
     * Copy model from `train-model/saved_models` to `train-model/model_to_train`
     * Run `train_model.py`
+    
+* To train model to recognize different stuff (e.g. not only cats and dogs):
+    * ctrl+f => `# Replaceable`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/images/classification

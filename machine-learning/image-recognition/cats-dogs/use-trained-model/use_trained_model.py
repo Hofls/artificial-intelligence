@@ -16,10 +16,9 @@ def identifyPicture(pic, loaded_model):
     #print(pix[np.newaxis, ...].shape)
 
     result = loaded_model.predict(pix[np.newaxis, ...])
-    if (result > 0): # Result depends on activation function that is used during model training
-        print(file + ' is a dog')
-    else:
-        print(file + ' is a cat')
+    print(file + " - " + class_names[np.argmax(result)])
+
+class_names = ['Cat', 'Dog'] # Replaceable
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
 images_directory = os.path.join(current_directory, "test_images")
