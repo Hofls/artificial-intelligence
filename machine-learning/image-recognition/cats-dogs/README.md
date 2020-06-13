@@ -18,5 +18,6 @@
     * Replace `class_names` in `use_trained_model.py`
 
 ### Based on:
+* https://www.tensorflow.org/tutorials/keras/classification
 * https://www.tensorflow.org/tutorials/images/classification
 * https://www.tensorflow.org/tutorials/keras/save_and_load
