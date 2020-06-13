@@ -58,7 +58,10 @@ def getDirectoriesStats(train_dir, validation_dir):
     dirTotal = DirTotal(total_train, total_val)
     return dirTotal
 
-def createNewModel(IMG_HEIGHT, IMG_WIDTH):
+def createNewModel(IMG_HEIGHT, IMG_WIDTH, train_dir):
+    os.chdir(train_dir)
+    folders_count = len([name for name in os.listdir('.') if not os.path.isfile(name)])
+
     # Create the model
     model = Sequential([
         Conv2D(16, 3, padding='same', activation='relu',
@@ -72,7 +75,7 @@ def createNewModel(IMG_HEIGHT, IMG_WIDTH):
         Dropout(0.2),
         Flatten(),
         Dense(512, activation='relu'),
-        Dense(2) # Replaceable (number of classes)
+        Dense(folders_count) # Amount of elements in prediction array [dog_score, cat_score, bird_score]
     ])
 
     model.compile(optimizer='adam',
@@ -125,7 +128,7 @@ def trainModel(train_dir, validation_dir, dirTotal):
     # Get the model
     model = loadModel()
     if model is None:
-        model = createNewModel(IMG_HEIGHT, IMG_WIDTH)
+        model = createNewModel(IMG_HEIGHT, IMG_WIDTH, train_dir)
 
     model.summary()
 

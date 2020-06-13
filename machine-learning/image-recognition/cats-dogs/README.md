@@ -15,7 +15,7 @@
     * Run `train_model.py`
     
 * To train model to recognize different stuff (e.g. not only cats and dogs):
-    * ctrl+f => `# Replaceable`
+    * Replace `class_names` in `use_trained_model.py`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/images/classification
