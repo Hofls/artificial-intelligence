@@ -1,3 +1,7 @@
+# Expectations:
+# This folder contains subfolders 'train/cats' and `train/dogs` with .jpg training images
+# This folder contains subfolders 'validation/cats' and `validation/dogs` with .jpg validation images
+
 import tensorflow as tf
 
 from tensorflow.keras.models import Sequential
