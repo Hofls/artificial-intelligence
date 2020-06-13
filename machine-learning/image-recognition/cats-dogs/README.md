@@ -9,6 +9,10 @@
     * Save random images of dogs and cats from the internet to `use-trained-model/test_images`
     * Run `use_trained_model.py`
     * Model should identify all `.jpg` images in `test_images` folder
+    
+* Continue training of existing model
+    * Copy model from `train-model/saved_models` to `train-model/model_to_train`
+    * Run `train_model.py`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/images/classification

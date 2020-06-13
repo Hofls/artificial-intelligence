@@ -1,3 +1,11 @@
+# Expectations:
+# This folder contains subfolders 'train/cats' and `train/dogs` with .jpg training images
+# This folder contains subfolders 'validation/cats' and `validation/dogs` with .jpg validation images
+
+# Model:
+# If there is a model inside 'model_to_train' folder - it is used for further training
+# If no model is found - new one is automatically created
+
 import tensorflow as tf
 
 from tensorflow.keras.models import Sequential
@@ -50,6 +58,36 @@ def getDirectoriesStats(train_dir, validation_dir):
     dirTotal = DirTotal(total_train, total_val)
     return dirTotal
 
+def createNewModel(IMG_HEIGHT, IMG_WIDTH):
+    # Create the model
+    model = Sequential([
+        Conv2D(16, 3, padding='same', activation='relu',
+               input_shape=(IMG_HEIGHT, IMG_WIDTH ,3)),
+        MaxPooling2D(),
+        Dropout(0.2),
+        Conv2D(32, 3, padding='same', activation='relu'),
+        MaxPooling2D(),
+        Conv2D(64, 3, padding='same', activation='relu'),
+        MaxPooling2D(),
+        Dropout(0.2),
+        Flatten(),
+        Dense(512, activation='relu'),
+        Dense(1)
+    ])
+
+    model.compile(optimizer='adam',
+                  loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
+                  metrics=['accuracy'])
+    return model
+
+def loadModel():
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    model_directory = os.path.join(current_directory, "model_to_train")
+    model_file = os.path.join(model_directory, "saved_model.pb")
+    if os.path.isfile(model_file):
+        return tf.keras.models.load_model(model_directory)
+    else:
+        return None
 
 def trainModel(train_dir, validation_dir, dirTotal):
     # Data augmentation (the model will never see the exact same picture twice during training)
@@ -84,25 +122,10 @@ def trainModel(train_dir, validation_dir, dirTotal):
     augmented_images = [train_data_gen[0][0][0] for i in range(5)]
     showImages(augmented_images)
 
-    # Create the model
-    model = Sequential([
-        Conv2D(16, 3, padding='same', activation='relu',
-               input_shape=(IMG_HEIGHT, IMG_WIDTH ,3)),
-        MaxPooling2D(),
-        Dropout(0.2),
-        Conv2D(32, 3, padding='same', activation='relu'),
-        MaxPooling2D(),
-        Conv2D(64, 3, padding='same', activation='relu'),
-        MaxPooling2D(),
-        Dropout(0.2),
-        Flatten(),
-        Dense(512, activation='relu'),
-        Dense(1)
-    ])
-
-    model.compile(optimizer='adam',
-                  loss=tf.keras.losses.BinaryCrossentropy(from_logits=True),
-                  metrics=['accuracy'])
+    # Get the model
+    model = loadModel()
+    if model is None:
+        model = createNewModel(IMG_HEIGHT, IMG_WIDTH)
 
     model.summary()
 
@@ -148,8 +171,8 @@ def saveModel(model):
     export_path = os.path.join(saved_models_directory, "{}".format(int(t)))
     model.save(export_path, save_format='tf')
 
-batch_size = 16 #todo - change back to 125
-epochs = 3 #todo - change back to 16
+batch_size = 125 #todo - change back to 125
+epochs = 4 #todo - change back to 16
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
 images_directory = os.path.join(current_directory, 'cats_and_dogs_filtered')
