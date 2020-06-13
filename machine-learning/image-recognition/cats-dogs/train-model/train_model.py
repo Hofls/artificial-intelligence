@@ -1,7 +1,3 @@
-# Expectations:
-# This folder contains subfolders 'train/cats' and `train/dogs` with .jpg training images
-# This folder contains subfolders 'validation/cats' and `validation/dogs` with .jpg validation images
-
 import tensorflow as tf
 
 from tensorflow.keras.models import Sequential
@@ -25,7 +21,7 @@ def showImages(images_arr):
     plt.tight_layout()
     plt.show()
 
-
+# Understand the data
 def getDirectoriesStats(train_dir, validation_dir):
     train_cats_dir = os.path.join(train_dir, 'cats')  # directory with our training cat pictures
     train_dogs_dir = os.path.join(train_dir, 'dogs')  # directory with our training dog pictures
@@ -56,15 +52,19 @@ def getDirectoriesStats(train_dir, validation_dir):
 
 
 def trainModel(train_dir, validation_dir, dirTotal):
+    # Data augmentation (the model will never see the exact same picture twice during training)
     IMG_HEIGHT = 150
     IMG_WIDTH = 150
 
     train_image_generator = ImageDataGenerator(rescale=1./255,
-                        rotation_range=45,
+                        rotation_range=25,
                         width_shift_range=.15,
                         height_shift_range=.15,
                         horizontal_flip=True,
-                        zoom_range=0.5) # Generator for our training data
+                        shear_range=0.2,
+                        brightness_range=(0.75, 1.25),
+                        channel_shift_range=50.0,
+                        zoom_range=0.2) # Generator for our training data
     validation_image_generator = ImageDataGenerator(rescale=1./255) # Generator for our validation data
 
     train_data_gen = train_image_generator.flow_from_directory(batch_size=batch_size,
@@ -83,16 +83,18 @@ def trainModel(train_dir, validation_dir, dirTotal):
 
     augmented_images = [train_data_gen[0][0][0] for i in range(5)]
     showImages(augmented_images)
-    #showImages(sample_training_images[:5])
 
-
+    # Create the model
     model = Sequential([
-        Conv2D(16, 3, padding='same', activation='relu', input_shape=(IMG_HEIGHT, IMG_WIDTH ,3)),
+        Conv2D(16, 3, padding='same', activation='relu',
+               input_shape=(IMG_HEIGHT, IMG_WIDTH ,3)),
         MaxPooling2D(),
+        Dropout(0.2),
         Conv2D(32, 3, padding='same', activation='relu'),
         MaxPooling2D(),
         Conv2D(64, 3, padding='same', activation='relu'),
         MaxPooling2D(),
+        Dropout(0.2),
         Flatten(),
         Dense(512, activation='relu'),
         Dense(1)
