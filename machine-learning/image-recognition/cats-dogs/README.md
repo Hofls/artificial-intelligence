@@ -1,4 +1,4 @@
-How to use:
+### How to run:
 * Train and save model
     * Download [archive](https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip)
     * Unzip archive into `train-model` folder
@@ -10,6 +10,6 @@ How to use:
     * Run `use_trained_model.py`
     * Model should identify all `.jpg` images in `test_images` folder
 
-Based on:
+### Based on:
 * https://www.tensorflow.org/tutorials/images/classification
 * https://www.tensorflow.org/tutorials/keras/save_and_load
