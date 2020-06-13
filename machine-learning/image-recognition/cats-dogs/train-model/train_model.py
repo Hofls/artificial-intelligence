@@ -161,7 +161,7 @@ batch_size = 125 #todo - change back to 125
 epochs = 4 #todo - change back to 16
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
-images_directory = os.path.join(current_directory, 'cats_and_dogs_filtered')
+images_directory = os.path.join(current_directory, 'images')
 
 train_dir = os.path.join(images_directory, 'train')
 validation_dir = os.path.join(images_directory, 'validation')

@@ -1,7 +1,7 @@
 ### How to run:
 * Train and save model
     * Download [archive](https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip)
-    * Unzip archive into `train-model` folder
+    * Unzip archive into `train-model/images` folder
     * Run `use_trained_model.py`
     * Model should be trained and saved into `saved_models` folder
 * Load and use model
@@ -14,7 +14,7 @@
     * Copy model from `train-model/saved_models` to `train-model/model_to_train`
     * Run `train_model.py`
     
-* To train model to recognize different stuff (e.g. not only cats and dogs):
+* To use model that recognizes different classes (e.g. not only cats and dogs):
     * Replace `class_names` in `use_trained_model.py`
 
 ### Based on:

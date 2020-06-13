@@ -1,5 +1,4 @@
 # Expectations:
-# Model was trained to identify 150x150 images of cats and dogs
 # This folder contains subfolder called 'test_images', with bunch of .jpg images
 # This folder contains subfolder called 'trained_model', with model exported in SavedModel format (contains assets, variables, saved_model.pb)
 
@@ -10,10 +9,7 @@ from PIL import Image
 
 def identifyPicture(pic, loaded_model):
     pic = pic.resize((150, 150), Image.ANTIALIAS)
-    #print(pic)
     pix = np.array(pic)
-    #print(pix.shape)
-    #print(pix[np.newaxis, ...].shape)
 
     result = loaded_model.predict(pix[np.newaxis, ...])
     print(file + " - " + class_names[np.argmax(result)])
