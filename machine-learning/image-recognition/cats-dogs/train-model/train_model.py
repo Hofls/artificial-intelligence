@@ -33,7 +33,7 @@ def showImages(images_arr):
 # Understand the data
 def getDirectoriesStats(train_dir, validation_dir):
     total_train = sum([len(files) for r, d, files in os.walk(train_dir)])
-    total_val = sum([len(files) for r, d, files in os.walk(train_dir)])
+    total_val = sum([len(files) for r, d, files in os.walk(validation_dir)])
 
     print("Total training images:", total_train)
     print("Total validation images:", total_val)
