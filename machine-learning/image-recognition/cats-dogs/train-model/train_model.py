@@ -76,7 +76,7 @@ def loadModel():
     else:
         return None
 
-def trainModel(train_dir, validation_dir, dirTotal):
+def trainModel(train_dir, validation_dir, dirTotal, endless_mode):
     # Data augmentation (the model will never see the exact same picture twice during training)
     IMG_HEIGHT = 150
     IMG_WIDTH = 150
@@ -116,13 +116,24 @@ def trainModel(train_dir, validation_dir, dirTotal):
 
     model.summary()
 
-    history = model.fit(
-        train_data_gen,
-        steps_per_epoch=dirTotal.total_train // batch_size,
-        epochs=epochs,
-        validation_data=val_data_gen,
-        validation_steps=dirTotal.total_val // batch_size
-    )
+    if (endless_mode):
+        for x in range(60):
+            history = model.fit(
+                train_data_gen,
+                steps_per_epoch=dirTotal.total_train // batch_size,
+                epochs=epochs,
+                validation_data=val_data_gen,
+                validation_steps=dirTotal.total_val // batch_size
+            )
+            saveModel(model, train_dir)
+    else:
+        history = model.fit(
+            train_data_gen,
+            steps_per_epoch=dirTotal.total_train // batch_size,
+            epochs=epochs,
+            validation_data=val_data_gen,
+            validation_steps=dirTotal.total_val // batch_size
+        )
     ModelInfo = namedtuple('ModelInfo', 'model history')
     modelInfo = ModelInfo(model, history)
     return modelInfo
@@ -152,7 +163,7 @@ def showHistoryOnGraphs(history):
     plt.show()
 
 
-def saveModel(model):
+def saveModel(model, train_dir):
     t = time.time()
     saved_models_directory = os.path.join(current_directory, "saved_models")
     export_path = os.path.join(saved_models_directory, "{}".format(int(t)))
@@ -164,7 +175,8 @@ def saveModel(model):
         pickle.dump(dir_list, fp)
 
 batch_size = 125 #todo - change back to 125
-epochs = 4 #todo - change back to 16
+epochs = 10 #todo - change back to 16
+endless_mode = False
 
 current_directory = os.path.dirname(os.path.realpath(__file__))
 images_directory = os.path.join(current_directory, 'images')
@@ -174,9 +186,9 @@ validation_dir = os.path.join(images_directory, 'validation')
 
 dirTotal = getDirectoriesStats(train_dir, validation_dir)
 
-modelInfo = trainModel(train_dir, validation_dir, dirTotal)
+modelInfo = trainModel(train_dir, validation_dir, dirTotal, endless_mode)
 
 showHistoryOnGraphs(modelInfo.history)
 
-saveModel(modelInfo.model)
+saveModel(modelInfo.model, train_dir)
 

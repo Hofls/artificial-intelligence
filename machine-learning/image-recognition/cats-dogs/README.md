@@ -13,6 +13,9 @@
 * Continue training of existing model
     * Copy model from `train-model/saved_models` to `train-model/model_to_train`
     * Run `train_model.py`
+    
+* Train for a long time with periodical backups:
+    * set `endless_mode = True` in `train_model.py`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/keras/classification
