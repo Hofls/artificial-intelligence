@@ -24,7 +24,7 @@
     * Copy saved model from `train-model/saved_models` to `find-model-problems/trained_model` 
     * Copy images from `train-model/images/validation` to `find-model-problems/validation_images`
     * Run `find_model_problems.py`
-    * All problematic images will appear in `find-model-problems/unidentified` directorys
+    * All problematic images will appear in `find-model-problems/unidentified` directories
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/keras/classification
