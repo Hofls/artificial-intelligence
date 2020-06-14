@@ -4,6 +4,7 @@
     * Unzip archive into `train-model/images` folder
     * Run `use_trained_model.py`
     * Model should be trained and saved into `saved_models` folder
+    
 * Load and use model
     * Copy saved model from `train-model/saved_models` to `use-trained-model/trained_model` 
     * Save random images of dogs and cats from the internet to `use-trained-model/test_images`
