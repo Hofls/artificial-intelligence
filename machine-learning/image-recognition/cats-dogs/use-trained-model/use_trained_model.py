@@ -1,5 +1,5 @@
 # Expectations:
-# This folder contains subfolder called 'test_images', with bunch of .jpg images
+# This folder contains subfolder called 'test_images', with bunch of images
 # This folder contains subfolder called 'trained_model', with model exported in SavedModel format (contains assets, variables, saved_model.pb)
 
 import tensorflow as tf
@@ -26,6 +26,6 @@ loaded_model = tf.keras.models.load_model(model_directory)
 #loaded_model.summary() # Check its architecture
 
 os.chdir(images_directory)
-for file in glob.glob("*.jpg"):
+for file in glob.glob("*.*"):
     pic = Image.open(file)
     identifyPicture(pic, loaded_model)

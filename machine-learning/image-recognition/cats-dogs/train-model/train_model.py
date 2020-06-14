@@ -1,6 +1,6 @@
 # Expectations:
-# This folder contains subfolders 'train/cats' and `train/dogs` with .jpg training images
-# This folder contains subfolders 'validation/cats' and `validation/dogs` with .jpg validation images
+# This folder contains subfolders 'train/cats' and `train/dogs` with training images
+# This folder contains subfolders 'validation/cats' and `validation/dogs` with validation images
 
 # Model:
 # If there is a model inside 'model_to_train' folder - it is used for further training
