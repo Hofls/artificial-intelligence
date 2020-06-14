@@ -13,9 +13,6 @@
 * Continue training of existing model
     * Copy model from `train-model/saved_models` to `train-model/model_to_train`
     * Run `train_model.py`
-    
-* To use model that recognizes different classes (e.g. not only cats and dogs):
-    * Replace `class_names` in `use_trained_model.py`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/keras/classification

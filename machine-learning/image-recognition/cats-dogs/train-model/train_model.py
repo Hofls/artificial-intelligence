@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 
 import time
 from collections import namedtuple
+import pickle
 
 
 def showImages(images_arr):
@@ -156,6 +157,11 @@ def saveModel(model):
     saved_models_directory = os.path.join(current_directory, "saved_models")
     export_path = os.path.join(saved_models_directory, "{}".format(int(t)))
     model.save(export_path, save_format='tf')
+
+    dir_list = next(os.walk(train_dir))[1]
+    custom_classes_path = os.path.join(export_path, "custom_classes")
+    with open(custom_classes_path, 'wb') as fp:
+        pickle.dump(dir_list, fp)
 
 batch_size = 125 #todo - change back to 125
 epochs = 4 #todo - change back to 16
