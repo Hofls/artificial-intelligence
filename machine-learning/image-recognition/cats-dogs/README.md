@@ -15,7 +15,8 @@
     * Run `train_model.py`
     
 * Train for a long time with periodical backups:
-    * set `endless_mode = True` in `train_model.py`
+    * Set `endless_mode = True` in `train_model.py`
+    * When you are done training - press `ctrl+c`
 
 ### Based on:
 * https://www.tensorflow.org/tutorials/keras/classification

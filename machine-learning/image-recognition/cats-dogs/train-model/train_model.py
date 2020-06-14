@@ -76,7 +76,7 @@ def loadModel():
     else:
         return None
 
-def trainModel(train_dir, validation_dir, dirTotal, endless_mode):
+def trainModel(train_dir, validation_dir, dirTotal):
     # Data augmentation (the model will never see the exact same picture twice during training)
     IMG_HEIGHT = 150
     IMG_WIDTH = 150
@@ -116,16 +116,21 @@ def trainModel(train_dir, validation_dir, dirTotal, endless_mode):
 
     model.summary()
 
+    histories = []
     if (endless_mode):
-        for x in range(60):
-            history = model.fit(
-                train_data_gen,
-                steps_per_epoch=dirTotal.total_train // batch_size,
-                epochs=epochs,
-                validation_data=val_data_gen,
-                validation_steps=dirTotal.total_val // batch_size
-            )
-            saveModel(model, train_dir)
+        try:
+            for x in range(60):
+                history = model.fit(
+                    train_data_gen,
+                    steps_per_epoch=dirTotal.total_train // batch_size,
+                    epochs=epochs,
+                    validation_data=val_data_gen,
+                    validation_steps=dirTotal.total_val // batch_size
+                )
+                saveModel(model, train_dir)
+                histories.append(history)
+        except KeyboardInterrupt:
+            pass
     else:
         history = model.fit(
             train_data_gen,
@@ -134,8 +139,9 @@ def trainModel(train_dir, validation_dir, dirTotal, endless_mode):
             validation_data=val_data_gen,
             validation_steps=dirTotal.total_val // batch_size
         )
-    ModelInfo = namedtuple('ModelInfo', 'model history')
-    modelInfo = ModelInfo(model, history)
+        histories.append(history)
+    ModelInfo = namedtuple('ModelInfo', 'model histories')
+    modelInfo = ModelInfo(model, histories)
     return modelInfo
 
 
@@ -188,7 +194,8 @@ dirTotal = getDirectoriesStats(train_dir, validation_dir)
 
 modelInfo = trainModel(train_dir, validation_dir, dirTotal, endless_mode)
 
-showHistoryOnGraphs(modelInfo.history)
+for history in modelInfo.histories:
+    showHistoryOnGraphs(history)
 
 saveModel(modelInfo.model, train_dir)
 
