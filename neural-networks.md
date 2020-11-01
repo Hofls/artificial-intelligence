@@ -7,6 +7,8 @@
     * Networks `learn` by processing examples, making guesses and adjusting weights
 * `Tensor` - multi-dimensional array of numbers
 * `Hyperparameter` - parameters to control learning process (Hidden layers, Activation functions, Dropout, Learning rate)
+* `Backpropagation` - how much each node contributed to the error (to adjust their weights)
+* 
 
 ## Types
 * `GAN` (Generative Adversarial Network) - 
@@ -21,17 +23,45 @@
         
 ## Misc
 * `Deepfake` - media in which a person replaced with someone else
-* 
-* 
+* `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
+    * Produces human-like text (poetry, books, computer code etc)
 
 ## Apps
-#### Images
-* `Artbreeder` - combine/edit images
-* `Quick, Draw!` - recognizes doodle that you drew
+#### Misc
+* `OpenAI API`
+    * `Semantic Search` - searching over documents based on the natural-language queries
+    * `Customer Service` - search + chat
+    * `Generation` - generate complex and consistent natural language (creative writing)
+    * `Productivity Tools` - code completion, expanding content
+    * `Content Comprehension` - text summary
+    * `Polyglot` - text translation
+* `Experiments with Google`
+    * `teachable-machine` - generate model without coding
+    * 
+    * 
+* `Runwayml` - a lot of different ML models (SaaS)
+* [Typical Applications](https://en.wikipedia.org/wiki/Applications_of_artificial_intelligence)
+
+#### Text
 * `TLDR This` - text summary
-* 
-* 
+
+#### Images/Video
+* `DeepFaceLab` - replaces faces, decreases age
+* `faceswap` - replaces faces 
+* `StyleGAN` - generates images (faces, cars, cats etc..)
+* `Artbreeder` - combine/edit images
+* `deepart.io` - repaint an image in any style
+* `Quick, Draw!` - recognizes doodle that you drew
+* `Prisma` - apply filters to an image
 * 
 * `GauGAN` - you draw shapes, it generates images (landscapes)
 * `Nvidia image inpainting` - choose parts of image for AI to retouch
-* 
+* `Findface` - person identification based on photo 
+* `PoseNet` - detects pose (used in dancing games)
+
+#### Music
+* `OpenAI jukebox` - generates music
+* `OpenAI musenet` - generates music
+
+#### Personal assistant
+* `Siri`, `Cortana`, `Alexa`, `Google assistant`
