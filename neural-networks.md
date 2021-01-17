@@ -46,6 +46,7 @@
 * `TLDR This` - text summary
 
 #### Images/Video
+* `Dall-e` - generates images from text description
 * `DeepFaceLab` - replaces faces, decreases age
 * `faceswap` - replaces faces 
 * `StyleGAN` - generates images (faces, cars, cats etc..)
@@ -53,6 +54,8 @@
 * `deepart.io` - repaint an image in any style
 * `Quick, Draw!` - recognizes doodle that you drew
 * `Prisma` - apply filters to an image
+* `Reface` - replace face in video with your face
+* `Faceapp` - modify your face / change background
 * 
 * `GauGAN` - you draw shapes, it generates images (landscapes)
 * `Nvidia image inpainting` - choose parts of image for AI to retouch
@@ -63,5 +66,10 @@
 * `OpenAI jukebox` - generates music
 * `OpenAI musenet` - generates music
 
-#### Personal assistant
-* `Siri`, `Cortana`, `Alexa`, `Google assistant`
+#### Games
+* `AI Dungeon` - text based rpg
+
+#### Etc
+* `Replika` - chat bot
+* `Siri`, `Cortana`, `Alexa`, `Google assistant` - personal assistants
+
