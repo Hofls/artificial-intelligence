@@ -35,12 +35,19 @@
     * `Productivity Tools` - code completion, expanding content
     * `Content Comprehension` - text summary
     * `Polyglot` - text translation
+    * Poor english as input, great english as output
+    * Unstructured data as input, json objects as output
+    * Speech to bash (e.g. "Firewall all incoming connections to port 22")
 * `Experiments with Google`
     * `teachable-machine` - generate model without coding
     * 
     * 
 * `Runwayml` - a lot of different ML models (SaaS)
+    * `Green screen` cut any objects out of your videos
+    * `Generative media` - generate video and images
+    * Upscale images
 * [Typical Applications](https://en.wikipedia.org/wiki/Applications_of_artificial_intelligence)
+* [GPT-3 demos](https://gpt3demo.com/)
 
 #### Text
 * `TLDR This` - text summary
@@ -51,6 +58,7 @@
 * `faceswap` - replaces faces 
 * `StyleGAN` - generates images (faces, cars, cats etc..)
 * `Artbreeder` - combine/edit images
+* `Deep Nostalgia` - Animates faces based on a photo
 * `deepart.io` - repaint an image in any style
 * `Quick, Draw!` - recognizes doodle that you drew
 * `Prisma` - apply filters to an image
@@ -62,14 +70,17 @@
 * `Findface` - person identification based on photo 
 * `PoseNet` - detects pose (used in dancing games)
 
-#### Music
-* `OpenAI jukebox` - generates music
-* `OpenAI musenet` - generates music
+#### Music generation
+* `OpenAI jukebox`
+* `OpenAI musenet`
+* `AIVA`
+* `DADABOTS`
 
 #### Games
 * `AI Dungeon` - text based rpg
+* `Modbox ReplicaAI` - talk to NPCs using voice chat
 
 #### Etc
 * `Replika` - chat bot
-* `Siri`, `Cortana`, `Alexa`, `Google assistant` - personal assistants
+* `Siri` / `Cortana` / `Alexa` / `Google assistant` - personal assistants
 
