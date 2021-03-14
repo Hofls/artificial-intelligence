@@ -51,6 +51,8 @@
 
 #### Text
 * `TLDR This` - text summary
+* `OthersideAI` - list of facts as input, entire article as output
+* 
 
 #### Images/Video
 * `Dall-e` - generates images from text description
@@ -60,10 +62,12 @@
 * `Artbreeder` - combine/edit images
 * `Deep Nostalgia` - Animates faces based on a photo
 * `deepart.io` - repaint an image in any style
+* `Wombo.ai` - lip sync based on a photo
 * `Quick, Draw!` - recognizes doodle that you drew
 * `Prisma` - apply filters to an image
 * `Reface` - replace face in video with your face
 * `Faceapp` - modify your face / change background
+* `airpaper.ai` - extract data from photo of document
 * 
 * `GauGAN` - you draw shapes, it generates images (landscapes)
 * `Nvidia image inpainting` - choose parts of image for AI to retouch
@@ -80,7 +84,13 @@
 * `AI Dungeon` - text based rpg
 * `Modbox ReplicaAI` - talk to NPCs using voice chat
 
-#### Etc
-* `Replika` - chat bot
-* `Siri` / `Cortana` / `Alexa` / `Google assistant` - personal assistants
+#### Software development
+* `losslesshq.com` - English to regex
+* `GPT-3 Tailwind CSS` - English to CSS
+* `bionicai.app` - English to web app component
+* `Code Oracle` - Source code to plain english
 
+#### Etc
+* `Replika` / `Quickchat` / `bionicai.app` - chat bots
+* `Siri` / `Cortana` / `Alexa` / `Google assistant` - personal assistants
+* `Ask me anything` - search engine with plain text responses
