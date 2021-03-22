@@ -25,6 +25,7 @@
 * `Deepfake` - media in which a person replaced with someone else
 * `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
     * Produces human-like text (poetry, books, computer code etc)
+    * [Turing test](https://lacker.io/ai/2020/07/06/giving-gpt-3-a-turing-test.html)
 
 ## Apps
 #### Misc
@@ -50,8 +51,8 @@
 * [GPT-3 demos](https://gpt3demo.com/)
 
 #### Text
-* `TLDR This` - text summary
-* `OthersideAI` - list of facts as input, entire article as output
+* `TLDR This` / `Grok` - text summary
+* `OthersideAI` / `Flowrite` - list of facts as input, entire article/email as output
 * 
 
 #### Images/Video
@@ -68,6 +69,7 @@
 * `Reface` - replace face in video with your face
 * `Faceapp` - modify your face / change background
 * `airpaper.ai` - extract data from photo of document
+* `ToonMe` - face filters
 * 
 * `GauGAN` - you draw shapes, it generates images (landscapes)
 * `Nvidia image inpainting` - choose parts of image for AI to retouch
@@ -88,6 +90,7 @@
 * `losslesshq.com` - English to regex
 * `GPT-3 Tailwind CSS` - English to CSS
 * `bionicai.app` - English to web app component
+* `Enzyme` - English to web page
 * `Code Oracle` - Source code to plain english
 
 #### Etc
