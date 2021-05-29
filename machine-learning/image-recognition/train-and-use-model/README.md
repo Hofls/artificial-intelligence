@@ -2,7 +2,7 @@
 * Train and save model
     * Download [archive](https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip)
     * Unzip archive into `train-model/images` folder
-    * Run `use_trained_model.py`
+    * Run `train_model.py`
     * Model should be trained and saved into `saved_models` folder
     
 * Load and use model

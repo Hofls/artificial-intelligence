@@ -11,6 +11,9 @@
 * `Hyperparameter` - parameters to control learning process 
     * Hidden layers, Activation functions, Dropout, Learning rate
 * `Backpropagation` - how much each node contributed to the error (to adjust their weights)
+* `Gradient descent` - iteratively adjusts parameters to minimize loss
+    * `Learning rate` - higher rate means higher learning speed and lower accuracy (e.g. 0.1)
+    * `Batch` - set of examples used in one iteration (gradient update)
 * `Feature` - input variable (measurable property)
     * In spam detection - email headers, email structure, language, frequency of specific terms, grammatical correctness
 * `Label` - thing we are predicting (e.g. price of bread, what's in the picture)
@@ -21,15 +24,18 @@
     * In image recognition - remove noise, scale down, convert to black & white
 * `Loss` - how bad is model prediction on specific example?
     * e.g. 0 - prediction is perfect, 0.05 - pretty close, 0.9 - not even close
-* `Loss function` - adjusts weights based on losses
+* `Loss function` - calculates loss (to adjust weights)
     * e.g. 0 - weights stays the same, 0.05 - adjusts a little, 0.9 adjusts a lot
-* 
+* `Empirical risk minimization` - process of building a model with minimal loss (in supervised learning)
+* `Convergence` reached if additional training on the current data will not improve the model
+* `Generalization` - model's ability to adapt to new data
+    * To maintain - divide data set into:
+        * `Еraining set` (~70%) - to train models
+        * `Мalidation set` (~15%) - compare different models, tweak parameters. Repeat multiple times, then pick the best model
+        * `Test set` (~15%) - test how model reacts on new data, no more model tuning after this point
+* `Overfitting` - model predictions work on training data but fail on new data (appears when model is too complex)
 
 #### Network types
-* `GAN` (Generative Adversarial Network) - 
-* `RNN` (Recurrent neural network) - 
-* `CNN` (Convolutional neural network) - 
-* 
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
     * `CNN` (Convolutional NN) - inspired by animal visual cortex. Each neuron in one layer connected to all neurons in the next layer
         * Usage - recognition, classification, recommendation, language processing
@@ -37,18 +43,19 @@
         * Usage - modeling sequence data (time series, natural language..)
     * `DBN` (Deep Belief Network) - each layer acts as a feature detector
         * Usage - generation, recognition
+* `GAN` (Generative Adversarial Network) - 
 * `Autoencoder` - encodes data by ignoring noise; reconstructs original data from encoded one
 
 #### Approaches
-* `Supervised learning` - training on labeled examples, goal is to learn rules that maps inputs to outputs
+* `Supervised learning` - training on labeled examples (given by a "teacher"), goal is to learn rules that maps inputs to outputs
 * `Unsupervised learning` - no labels, used to discover hidden patterns/feature learning
 * `Reinforcement learning` - interaction with dynamic environment (e.g. move car from A to B)
     * With constant feedback (analogous to rewards) that it tries to optimize
 
 #### Problem types
-* `Analytics` - extract information from text (e.g. What is the capital of India?)
-* `Regression` - predict values (e.g. What this stock price will be tomorrow?)
-* `Classification` - classify objects (e.g. what this image represents?)
+* `Analytics` - extract information from text (e.g. what is the capital of India?)
+* `Regression` - predict values (e.g. what this stock price will be tomorrow?)
+* `Classification` - classify objects (e.g. what this image represents? Is this email spam?)
 * `Recognition` - (e.g. what's written here?)
 * `Detection`
 * `Generation`
@@ -56,10 +63,6 @@
 * `Clustering` - discover structure (e.g. recognize communities within large group of people)
 * `Anomaly detection` - find unusual occurrences (e.g. is something suspicious happened?)
 
-#### Areas
-* `Text`
-    * 
-        
 #### Misc
 * Frameworks
     * By abstraction level: `Keras` > `Tensorflow` > `Pytorch`
@@ -68,3 +71,5 @@
 * `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
     * Produces human-like text (poetry, books, computer code etc)
     * [Turing test](https://lacker.io/ai/2020/07/06/giving-gpt-3-a-turing-test.html)
+* [Glossary](https://developers.google.com/machine-learning/glossary)
+* [Playground](http://playground.tensorflow.org/) - check how network learns with different parameters
