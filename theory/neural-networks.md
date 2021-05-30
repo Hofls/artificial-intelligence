@@ -1,6 +1,7 @@
 #### Concepts
 * `Artificial intelligence` -  intelligence demonstrated by machines
 * `Machine learning` - systems that improve/learn automatically
+    * High quality and quantity of data is the most important component of success in ML
 * `Neural network` - systems inspired by the biological neural networks that constitute animal brains
     * Consist of `nodes` (neurons) connected to each other via `edges` (synapses) 
     * Each node/edge has `weight` that increases/decreases strength of signal
@@ -21,6 +22,7 @@
 * `Feature` - input variable (measurable property)
     * In spam detection - email headers, email structure, language, frequency of specific terms, grammatical correctness
 * `Feature engineering` - converting data to useful features
+    * Helps model understand the data the same way people do
 * `Label` - thing we are predicting (e.g. price of bread, what's in the picture)
 * `Labeled example` = features + label (used for training)
     * Email with mark "spam/not spam"
@@ -84,7 +86,7 @@
 * `Recognition` - (e.g. what's written here?)
     * aka `Structured output`
 * `Detection`
-* `Generation`
+* `Generation` - generates new examples (e.g. create a poem please)
 * `Recommenders` - create recommendations (e.g. what movies this person would like?)
     * aka `Association rule learning`
 * `Clustering` - group similar examples (e.g. recognize communities within large group of people)
@@ -98,10 +100,15 @@
     * `numpy` - arrays and operations
     * `pandas` - data analysis and manipulation
     * `matplotlib` - data visualization
-* `Kaggle.com` - competitions, datasets, notebooks
 * `Deepfake` - media in which a person replaced with someone else
 * `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
     * Produces human-like text (poetry, books, computer code etc)
     * [Turing test](https://lacker.io/ai/2020/07/06/giving-gpt-3-a-turing-test.html)
+* [Kaggle](https://www.kaggle.com/) - Competitions, datasets, notebooks
 * [Glossary](https://developers.google.com/machine-learning/glossary)
 * [Playground](http://playground.tensorflow.org/) - check how network learns with different parameters
+* [Repository of trained ML models](https://www.tensorflow.org/hub)
+
+#### Best practices
+* [Rules of ML](https://developers.google.com/machine-learning/guides/rules-of-ml)
+* [Good Data Analysis](https://developers.google.com/machine-learning/guides/good-data-analysis)
