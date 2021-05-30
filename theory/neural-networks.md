@@ -11,11 +11,13 @@
 * `Hyperparameter` - parameters to control learning process 
     * Hidden layers, Activation functions, Dropout, Learning rate
 * `Backpropagation` - how much each node contributed to the error (to adjust their weights)
-* `Gradient descent` - iteratively adjusts parameters to minimize loss
+* `Gradient descent` - iteratively adjusts weights to minimize loss
     * `Learning rate` - higher rate means higher learning speed and lower accuracy (e.g. 0.1)
+    * `Gradient step` = learning rate * gradient
     * `Batch` - set of examples used in one iteration (gradient update)
 * `Feature` - input variable (measurable property)
     * In spam detection - email headers, email structure, language, frequency of specific terms, grammatical correctness
+* `Feature engineering` - converting data to useful features
 * `Label` - thing we are predicting (e.g. price of bread, what's in the picture)
 * `Labeled example` = features + label (used for training)
     * Email with mark "spam/not spam"
@@ -34,6 +36,18 @@
         * `Мalidation set` (~15%) - compare different models, tweak parameters. Repeat multiple times, then pick the best model
         * `Test set` (~15%) - test how model reacts on new data, no more model tuning after this point
 * `Overfitting` - model predictions work on training data but fail on new data (appears when model is too complex)
+* `Regularization` - penalizing the complexity of a model to reduce overfitting
+    * `Dropout` - removes random units each gradient step (ends up with a large amount of small networks)
+    * `L1` - drives weights of barely relevant features to 0
+    * `L2` - drives outlier weights closer to 0
+* `Epoch` - training pass over entire dataset
+* `Cleaning data`
+    * `Clipping` - (e.g. normal range is 30-60, 12 becomes 30, 88 becomes 60)
+    * `Bucketing`/`Bining` - (e.g. buckets - 0, 15, 30; 6.73 goes to 0 bucket, 25.43 goes to 30 bucket)
+    * `Scrubbing` - removal of bad data (duplicates, nulls, impossible values)
+    * `Scaling` - converting values into standard range (e.g. -1..1)
+        * All the features should be on the same scale
+* `Synthetic feature` - new feature created from existing ones
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
@@ -66,6 +80,10 @@
 #### Misc
 * Frameworks
     * By abstraction level: `Keras` > `Tensorflow` > `Pytorch`
+* Python libraries:
+    * `numpy` - arrays and operations
+    * `pandas` - data analysis and manipulation
+    * `matplotlib` - data visualization
 * `Kaggle.com` - competitions, datasets, notebooks
 * `Deepfake` - media in which a person replaced with someone else
 * `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
