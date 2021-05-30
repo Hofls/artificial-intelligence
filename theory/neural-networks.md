@@ -37,9 +37,9 @@
 * `Convergence` reached if additional training on the current data will not improve the model
 * `Generalization` - model's ability to adapt to new data
     * To maintain - divide data set into:
-        * `Еraining set` (~70%) - to train models
-        * `Мalidation set` (~15%) - compare different models, tweak parameters. Repeat multiple times, then pick the best model
-        * `Test set` (~15%) - test how model reacts on new data, no more model tuning after this point
+        * `Training set` (~70%) - to train models
+        * `Validation set` (~15%) - compare different models, tweak parameters. Repeat multiple times, then pick the best model
+        * `Test set` (~15%) - test how model reacts to new data (no more model tuning after this point)
 * `Overfitting` - model predictions work on training data but fail on new data (appears when model is too complex)
     * `Regularization` - penalizing the complexity of a model to reduce overfitting
     * `Dropout` - removes random units each gradient step (ends up with a large amount of small networks)

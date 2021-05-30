@@ -8,13 +8,9 @@ def toNumbers(text):
     numbers.append(ord(symbol))
   return np.asarray(numbers).astype('float32')
 
-def predict(text):
-  converted = np.array([toNumbers(text)])
-  print(model.predict(converted))
-
 data_x = np.array([toNumbers('good'), toNumbers('ok'), toNumbers('nice'), toNumbers('excellent')])
 data_x = tf.keras.preprocessing.sequence.pad_sequences(data_x, padding='post')
-label_x = np.array([0,1,2,3])
+label_x = np.array([0,1,2,2])
 print(data_x)
 
 model = tf.keras.models.Sequential([
@@ -26,7 +22,7 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(64, activation='relu'),
   tf.keras.layers.Dropout(0.1),
   tf.keras.layers.Dense(128, activation='relu'),
-  tf.keras.layers.Dense(4)
+  tf.keras.layers.Dense(3) # unique labels count
  ])
 
 
