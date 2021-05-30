@@ -16,7 +16,7 @@ def predict(model, word):
     print(model.predict(pad_word))
 
 
-data_x = hot([ 'good',  'well', 'nice', 'excellent'])
+data_x = hot([ 'good',  'ok', 'nice', 'excellent'])
 
 label_x = np.array([0,0,1,1])
 

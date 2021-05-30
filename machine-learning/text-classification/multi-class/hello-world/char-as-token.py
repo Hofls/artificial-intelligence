@@ -8,7 +8,13 @@ def toNumbers(text):
     numbers.append(ord(symbol))
   return np.asarray(numbers).astype('float32')
 
-data_x = np.array([toNumbers('ef'), toNumbers('cd'), toNumbers('wu'), toNumbers('ab')])
+def predict(text):
+  converted = np.array([toNumbers(text)])
+  print(model.predict(converted))
+
+data_x = np.array([toNumbers('good'), toNumbers('ok'), toNumbers('nice'), toNumbers('excellent')])
+data_x = tf.keras.preprocessing.sequence.pad_sequences(data_x, padding='post')
+print(data_x)
 label_x = np.array([0,0,1,1])
 
 model = tf.keras.models.Sequential([
@@ -26,5 +32,6 @@ history = model.fit(data_x, label_x, epochs=200, batch_size=2, verbose=0)
 
 plt.plot(history.history['loss'])
 
-print(model.predict(toNumbers('cd')))
+predict('ok')
+
 
