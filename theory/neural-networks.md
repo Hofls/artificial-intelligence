@@ -60,6 +60,11 @@
 * `Synthetic feature` - new feature created from existing ones
 * `Model training` - `static` (trained once, used for a while), `dynamic` (trained continuously)
 * `Inference` - `static` (make all possible predictions and cache them), `dynamic` (predictions on demand)
+* `Preprocessing layer` - converts raw data into a format for processing (must have for model portability)
+* `Data augmentation` - increase diversity of training set by applying random transformations
+    * For images - rotation, rescale, brightness change, horizontal flip (ImageDataGenerator)
+    * For text - [TextAttack](https://github.com/QData/TextAttack)
+* `Integrated gradients` - Explainable AI technique (for debugging)
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
@@ -104,6 +109,7 @@
 * `GPT-3` (Generative Pre-trained Transformer 3) - state-of-the-art language model (year 2020)
     * Produces human-like text (poetry, books, computer code etc)
     * [Turing test](https://lacker.io/ai/2020/07/06/giving-gpt-3-a-turing-test.html)
+* [Colab](https://colab.research.google.com/) - Write and execute Python in browser (great for ML)
 * [Kaggle](https://www.kaggle.com/) - Competitions, datasets, notebooks
 * [Glossary](https://developers.google.com/machine-learning/glossary)
 * [Playground](http://playground.tensorflow.org/) - check how network learns with different parameters
