@@ -14,24 +14,23 @@ def predict(text):
 
 data_x = np.array([toNumbers('good'), toNumbers('ok'), toNumbers('nice'), toNumbers('excellent')])
 data_x = tf.keras.preprocessing.sequence.pad_sequences(data_x, padding='post')
+label_x = np.array([0,1,2,3])
 print(data_x)
-label_x = np.array([0,0,1,1])
 
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Embedding(1000, 8),
-  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Embedding(2000, 8),
   tf.keras.layers.GlobalAveragePooling1D(),
-        tf.keras.layers.Flatten(),
-        tf.keras.layers.Dense(12, activation='relu'),
-    tf.keras.layers.Dense(2)
+  tf.keras.layers.Dropout(0.1),
+  tf.keras.layers.Dense(32, activation='relu'),
+  tf.keras.layers.Dropout(0.1),
+  tf.keras.layers.Dense(64, activation='relu'),
+  tf.keras.layers.Dropout(0.1),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dense(4)
  ])
 
 
 model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), metrics=['accuracy'])
-history = model.fit(data_x, label_x, epochs=200, batch_size=2, verbose=0)
-
+history = model.fit(data_x, label_x, epochs=200, verbose=0)
 plt.plot(history.history['loss'])
-
-predict('ok')
-
-
+print(model.predict(data_x))
