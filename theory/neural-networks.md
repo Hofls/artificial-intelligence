@@ -7,11 +7,14 @@
     * Each node takes multiple numbers as input (`signal`) and produces single number as output (via `Activation function`)
     * Nodes aggregated into `layers` (different layers perform different transformations). Typical layers: input - hidden - output
     * Networks `learn` by processing examples, making guesses and adjusting weights
+* Problem solving algorithm:
+    * Define ML problem, propose a solution -> Construct dataset -> Transform data -> Train a model -> Use model to make predictions
 * `Tensor` - multi-dimensional array of numbers
 * `Hyperparameter` - parameters to control learning process 
     * Hidden layers, Activation functions, Dropout, Learning rate
 * `Backpropagation` - how much each node contributed to the error (to adjust their weights)
-* `Gradient descent` - iteratively adjusts weights to minimize loss
+    * `Gradient descent` - iteratively adjusts weights to minimize loss 
+        * If node contributed to error - its weight decreases, if contributed to success - weight increases
     * `Learning rate` - higher rate means higher learning speed and lower accuracy (e.g. 0.1)
     * `Gradient step` = learning rate * gradient
     * `Batch` - set of examples used in one iteration (gradient update)
@@ -36,10 +39,15 @@
         * `Мalidation set` (~15%) - compare different models, tweak parameters. Repeat multiple times, then pick the best model
         * `Test set` (~15%) - test how model reacts on new data, no more model tuning after this point
 * `Overfitting` - model predictions work on training data but fail on new data (appears when model is too complex)
-* `Regularization` - penalizing the complexity of a model to reduce overfitting
+    * `Regularization` - penalizing the complexity of a model to reduce overfitting
     * `Dropout` - removes random units each gradient step (ends up with a large amount of small networks)
     * `L1` - drives weights of barely relevant features to 0
     * `L2` - drives outlier weights closer to 0
+    * `Regularization rate` / `lambda` - importance of the regularization function
+* `Logistic regression` - generates probability (value between 0..1, e.g 0.95)
+* `Activation functions`
+    * `ReLU` - positive input passed on, negative converted to 0
+    * `Sigmoid function` - converts regression output to probability
 * `Epoch` - training pass over entire dataset
 * `Cleaning data`
     * `Clipping` - (e.g. normal range is 30-60, 12 becomes 30, 88 becomes 60)
@@ -48,6 +56,8 @@
     * `Scaling` - converting values into standard range (e.g. -1..1)
         * All the features should be on the same scale
 * `Synthetic feature` - new feature created from existing ones
+* `Model training` - `static` (trained once, used for a while), `dynamic` (trained continuously)
+* `Inference` - `static` (make all possible predictions and cache them), `dynamic` (predictions on demand)
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
@@ -70,12 +80,16 @@
 * `Analytics` - extract information from text (e.g. what is the capital of India?)
 * `Regression` - predict values (e.g. what this stock price will be tomorrow?)
 * `Classification` - classify objects (e.g. what this image represents? Is this email spam?)
+    * Binary, multi-class
 * `Recognition` - (e.g. what's written here?)
+    * aka `Structured output`
 * `Detection`
 * `Generation`
 * `Recommenders` - create recommendations (e.g. what movies this person would like?)
-* `Clustering` - discover structure (e.g. recognize communities within large group of people)
+    * aka `Association rule learning`
+* `Clustering` - group similar examples (e.g. recognize communities within large group of people)
 * `Anomaly detection` - find unusual occurrences (e.g. is something suspicious happened?)
+* `Ranking` - Identify position on a scale (e.g. google search result ranking)
 
 #### Misc
 * Frameworks

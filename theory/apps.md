@@ -24,7 +24,7 @@
 #### Text
 * `TLDR This` / `Grok` - text summary
 * `OthersideAI` / `Flowrite` - list of facts as input, entire article/email as output
-* 
+* `Smart Reply` - suggest a reply for email
 
 #### Images/Video
 * `Dall-e` - generates images from text description
