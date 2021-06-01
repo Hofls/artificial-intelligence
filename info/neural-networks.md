@@ -65,6 +65,7 @@
     * For images - rotation, rescale, brightness change, horizontal flip (ImageDataGenerator)
     * For text - [TextAttack](https://github.com/QData/TextAttack)
 * `Integrated gradients` - Explainable AI technique (for debugging)
+* `Logits` - vector of raw (non-normalized) predictions that a classification model generates
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
