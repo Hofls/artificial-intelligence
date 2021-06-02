@@ -15,69 +15,69 @@ class TextAugmentation(tf.keras.utils.Sequence):
         return len(self.x)
 
     def __getitem__(self, idx):
-        augmented = augmentEach(self.x)
-        text_as_numbers = eachToNumbers(augmented)
+        augmented = augment_each(self.x)
+        text_as_numbers = each_to_numbers(augmented)
         return text_as_numbers, self.y
 
 
-def standardizeData(sentences):
+def standardize_data(sentences):
     data = []
     for sentence in sentences:
         formatted = sentence.lower().strip()
         only_text = re.sub('[^a-z0-9 ]+', '', formatted)
-        only_big_words = deleteWords(only_text)
+        only_big_words = delete_words(only_text)
         data.append(only_big_words)
     return np.array(data)
 
 
-def getTrainingData():
+def get_training_data():
     csv = pd.read_csv('training-set.csv', delimiter=';')
     labels = csv.to_numpy()[:, 0]
     questions = csv.to_numpy()[:, 1]
     return {
         "labels": np.asarray(labels).astype('float32'),
-        "questions": standardizeData(questions)
+        "questions": standardize_data(questions)
     }
 
 
-def toNumbers(text):
+def to_numbers(text):
     numbers = []
     for symbol in list(text):
         numbers.append(ord(symbol))
     return np.asarray(numbers).astype('float32')
 
 
-def eachToNumbers(sentences):
+def each_to_numbers(sentences):
     data = []
     for sentence in sentences:
-        data.append(toNumbers(sentence))
+        data.append(to_numbers(sentence))
     return tf.keras.preprocessing.sequence.pad_sequences(data, padding='post')
 
 
-def augmentEach(sentences):
+def augment_each(sentences):
     augmented = []
     for sentence in sentences:
         augmented.append(augment(sentence))
     return augmented
 
 
-def deleteRandomWord(sentence):
+def delete_random_word(sentence):
     words = sentence.split()
     words.remove(random.choice(words))
     return ' '.join(words)
 
 
-def deleteWords(sentence):
+def delete_words(sentence):
     return ' '.join(word for word in sentence.split() if len(word) > 2)
 
 
-def changeWordsOrder(sentence):
+def change_words_order(sentence):
     words = sentence.split()
     random.shuffle(words)
     return ' '.join(words)
 
 
-def addRandomWord(sentence):
+def add_random_word(sentence):
     word_length = random.randrange(10) + 3
     new_word = ''.join(random.choices(string.ascii_lowercase, k=word_length))
     return sentence + ' ' + new_word
@@ -85,13 +85,13 @@ def addRandomWord(sentence):
 
 def augment(sentence):
     # sentence = deleteRandomWord(sentence)
-    sentence = addRandomWord(sentence)
-    sentence = changeWordsOrder(sentence)
+    sentence = add_random_word(sentence)
+    sentence = change_words_order(sentence)
     return sentence
 
 
 model = tf.keras.models.Sequential([
-    tf.keras.layers.Embedding(2000, 8),
+    tf.keras.layers.Embedding(200, 8),
     tf.keras.layers.GlobalAveragePooling1D(),
     tf.keras.layers.Dropout(0.1),
     tf.keras.layers.Dense(32, activation='relu'),
@@ -104,13 +104,13 @@ model = tf.keras.models.Sequential([
 
 model.compile(optimizer='adam', loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
-rawData = getTrainingData()
+rawData = get_training_data()
 textGenerator = TextAugmentation(rawData["questions"], rawData["labels"])
 history = model.fit(textGenerator, epochs=80, verbose=0)
 plt.plot(history.history['loss'])
 plt.show()
 
 print(rawData["questions"])
-print(augmentEach(rawData["questions"]))
+print(augment_each(rawData["questions"]))
 augmentedData = textGenerator.__getitem__(0)
 print(model.predict(augmentedData))
