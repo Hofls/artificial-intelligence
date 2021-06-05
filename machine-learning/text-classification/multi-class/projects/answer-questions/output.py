@@ -23,7 +23,5 @@ def print_results(raw_data, text_generator, trained):
 
 def print_prediction(prediction, text):
     score = tf.nn.softmax(prediction)
-    print(
-        "Label - {}, Confidence - {:.2f}, Text - {}"
-            .format(np.argmax(score), 100 * np.max(score), text)
-    )
+    print("Label - {}, Confidence - {:.2f}, Text - {}"
+          .format(np.argmax(score), 100 * np.max(score), text))
