@@ -21,12 +21,8 @@ label_x = np.array([0,1,2,2])
 print(data_x)
 
 model = tf.keras.models.Sequential([
-  tf.keras.layers.Embedding(200, 8),
+  tf.keras.layers.Embedding(200, 128),
   tf.keras.layers.GlobalAveragePooling1D(),
-  tf.keras.layers.Dropout(0.1),
-  tf.keras.layers.Dense(32, activation='relu'),
-  tf.keras.layers.Dropout(0.1),
-  tf.keras.layers.Dense(64, activation='relu'),
   tf.keras.layers.Dropout(0.1),
   tf.keras.layers.Dense(128, activation='relu'),
   tf.keras.layers.Dense(3) # unique labels count
