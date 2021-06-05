@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
+import tensorflow as tf
 import re
+import os
 
 
 def get_training_data():
@@ -23,3 +25,9 @@ def standardize_data(sentences):
 
 def delete_words(sentence):
     return ' '.join(word for word in sentence.split() if len(word) > 2)
+
+def load_model():
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    path_to_model = os.path.join(current_directory, "exported-model")
+    loaded_model = tf.keras.models.load_model(path_to_model)
+    return loaded_model

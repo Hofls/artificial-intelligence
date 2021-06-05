@@ -1,10 +1,12 @@
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
+import os
 import augment
 
-def print_results(raw_data, text_generator, trained):
-    plt.plot(trained["history"].history['loss'])
+
+def print_results(raw_data, text_generator, model, history):
+    plt.plot(history.history['loss'])
     plt.show()
 
     print("Input data:")
@@ -13,7 +15,7 @@ def print_results(raw_data, text_generator, trained):
 
     print("Predictions (raw):")
     augmentedData = text_generator.__getitem__(0)
-    predictions = trained["model"].predict(augmentedData)
+    predictions = model.predict(augmentedData)
     print(predictions)
 
     print("Predictions (normalized):")
@@ -25,3 +27,9 @@ def print_prediction(prediction, text):
     score = tf.nn.softmax(prediction)
     print("Label - {}, Confidence - {:.2f}, Text - {}"
           .format(np.argmax(score), 100 * np.max(score), text))
+
+
+def save_model(model):
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    path_to_model = os.path.join(current_directory, "exported-model")
+    model.save(path_to_model, save_format='tf')
