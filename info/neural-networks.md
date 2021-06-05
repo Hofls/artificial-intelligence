@@ -66,6 +66,8 @@
     * For text - [TextAttack](https://github.com/QData/TextAttack)
 * `Integrated gradients` - Explainable AI technique (for debugging)
 * `Logits` - vector of raw (non-normalized) predictions that a classification model generates
+* `Softmax` - assigns probabilities to each class in a multi-class problem 
+    * e.g. 0.95 for a dog, 0.04 for a cat, 0.01 for a bird)
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
