@@ -5,7 +5,7 @@ import tensorflow as tf
 
 
 def augment(sentence):
-    # sentence = deleteRandomWord(sentence)
+    #sentence = delete_random_word(sentence)
     sentence = add_random_words(sentence)
     sentence = change_words_order(sentence)
     return sentence

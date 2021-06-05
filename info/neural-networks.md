@@ -48,7 +48,7 @@
     * `Regularization rate` / `lambda` - importance of the regularization function
 * `Logistic regression` - generates probability (value between 0..1, e.g 0.95)
 * `Activation functions`
-    * `ReLU` - positive input passed on, negative converted to 0
+    * `ReLU` - positive input passed on, negative converted to 0 (good default)
     * `Sigmoid function` - converts regression output to probability
 * `Epoch` - training pass over entire dataset
 * `Cleaning data`
@@ -68,6 +68,9 @@
 * `Logits` - vector of raw (non-normalized) predictions that a classification model generates
 * `Softmax` - assigns probabilities to each class in a multi-class problem 
     * e.g. 0.95 for a dog, 0.04 for a cat, 0.01 for a bird)
+* `Undersampling` - when label has a small amount of samples (unbalanced data)
+    * Rare data will have almost no effect on weights, network won't learn them
+    * `SMOTE` - solution to `Undersampling` (generates new examples to improve data balance)
 
 #### Network types
 * `Deep learning` - multiple layers in the network to progressively extract higher-level features (edges => nose, eyes => face)
@@ -100,6 +103,26 @@
 * `Clustering` - group similar examples (e.g. recognize communities within large group of people)
 * `Anomaly detection` - find unusual occurrences (e.g. is something suspicious happened?)
 * `Ranking` - Identify position on a scale (e.g. google search result ranking)
+
+#### Model layers
+* `Types`
+    * `Input Layer` 
+        * Number of neurons comprising this layer should be equal to the number of features 
+    * `Hidden layers`
+        * 2 layers is a good starting point
+        * Number of neurons = mean of the neurons in input and output layers
+        * Add `Dropout` after every layer (0.1 is good default)
+    * `Output Layer` 
+        * If regression or binary classification: single node. If multi-class: nodes count = labels count.
+* `Layers`:
+    * `Embedding` - Turns positive integers (indexes) into dense vectors of fixed size
+        * e.g. `20 -> [0.6, -0.2]`
+    * `GlobalAveragePooling1D` - pooling, if entire sequence is important
+    * `GlobalMaxPooling1D` - pooling, if only part of sequence is important 
+        * e.g. looking for a specific feature
+    * `Dense` - regular densely-connected layer
+    * `Dropout` - prevents overfitting 
+    * `Flatten` - flattens input (e.g. 2D array to 1D)
 
 #### Misc
 * Frameworks
