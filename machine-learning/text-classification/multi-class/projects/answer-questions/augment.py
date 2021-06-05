@@ -6,7 +6,7 @@ import tensorflow as tf
 
 def augment(sentence):
     # sentence = deleteRandomWord(sentence)
-    sentence = add_random_word(sentence)
+    sentence = add_random_words(sentence)
     sentence = change_words_order(sentence)
     return sentence
 
@@ -30,10 +30,14 @@ def change_words_order(sentence):
     return ' '.join(words)
 
 
-def add_random_word(sentence):
+def add_random_words(sentence):
+    words = sentence.split()
+    new_words_count = len(words) // 3
     word_length = random.randrange(10) + 3
-    new_word = ''.join(random.choices(string.ascii_lowercase, k=word_length))
-    return sentence + ' ' + new_word
+    for i in range(new_words_count):
+        new_word = ''.join(random.choices(string.ascii_lowercase, k=word_length))
+        sentence = sentence + ' ' + new_word
+    return sentence
 
 
 def delete_random_word(sentence):
