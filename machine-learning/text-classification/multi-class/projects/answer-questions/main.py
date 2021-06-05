@@ -5,5 +5,5 @@ import model
 
 raw_data = input.get_training_data()
 text_generator = augment.TextAugmentation(raw_data["questions"], raw_data["labels"])
-trained = model.train(text_generator)
+trained = model.train(text_generator, raw_data["labels"])
 output.print_results(raw_data, text_generator, trained)
