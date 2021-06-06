@@ -6,7 +6,7 @@ def read_csv():
     csv = pd.read_csv('data/original.csv', delimiter=';')
     headers = list(csv.columns.values)
     return {
-        "items": csv.to_numpy(),
+        "items": csv.to_dict('records'),
         "headers": headers
     }
 
@@ -14,19 +14,17 @@ def write_csv(items, headers):
     with open("data/processed.csv", "w", newline="") as f:
         writer = csv.writer(f, delimiter=';')
         writer.writerow(headers)
-        writer.writerows(items)
+        for item in items:
+            writer.writerow(item.values())
 
 def fix(items):
     labels_count = get_labels_count(items)
     max_count = get_max_count(labels_count)
-    new_items = []
     for label in labels_count:
         new_samples_count = max_count - labels_count[label]
         samples = create_samples(items, label, new_samples_count)
         if samples:
-            new_items.append(samples)
-    print(items[0])
-    print(new_items[0][0])
+            items.extend(samples)
     return items
 
 def create_samples(items, expected_label, new_samples_count):
@@ -37,6 +35,8 @@ def create_samples(items, expected_label, new_samples_count):
     added_samples = 0
     while added_samples < new_samples_count:
         for item in actual_items:
+            if (added_samples >= new_samples_count):
+                break
             new_items.append(item)
             added_samples += 1
     return new_items
@@ -44,7 +44,7 @@ def create_samples(items, expected_label, new_samples_count):
 def items_with_label(items, expected_label):
     with_label = []
     for item in items:
-        label = item[0]
+        label = item["Label"]
         if label == expected_label:
             with_label.append(item)
     return with_label
@@ -52,7 +52,7 @@ def items_with_label(items, expected_label):
 def get_labels_count(items):
     count = {}
     for item in items:
-        label = item[0]
+        label = item["Label"]
         if label in count:
             count[label] = count[label] + 1
         else:
