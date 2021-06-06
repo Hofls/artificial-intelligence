@@ -19,6 +19,7 @@ def write_csv(items, headers):
 def process(items):
     items = clear_descriptions(items)
     items = remove_items(items)
+    items = sorted(items, key=lambda k: k['Label'])
     return items
 
 def clear_descriptions(items):

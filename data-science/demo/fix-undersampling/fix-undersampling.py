@@ -25,6 +25,7 @@ def fix(items):
         samples = create_samples(items, label, new_samples_count)
         if samples:
             items.extend(samples)
+    items = sorted(items, key=lambda k: k['Label'])
     return items
 
 def create_samples(items, expected_label, new_samples_count):
