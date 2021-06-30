@@ -58,6 +58,7 @@
 * `Modbox ReplicaAI` - talk to NPCs using voice chat
 
 #### Software development
+* `copilot.github.com` - English to code
 * `losslesshq.com` - English to regex
 * `GPT-3 Tailwind CSS` - English to CSS
 * `bionicai.app` - English to web app component
