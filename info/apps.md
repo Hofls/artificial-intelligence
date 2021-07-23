@@ -64,6 +64,8 @@
 * `bionicai.app` - English to web app component
 * `Enzyme` - English to web page
 * `Code Oracle` - Source code to plain english
+* AI based autocomplete:
+    * `Tabnine` `Codota` `Kite`
 
 #### Etc
 * `Replika` / `Quickchat` / `bionicai.app` - chat bots
