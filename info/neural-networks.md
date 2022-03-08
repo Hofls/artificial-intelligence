@@ -139,7 +139,11 @@
 * [Kaggle](https://www.kaggle.com/) - Competitions, datasets, notebooks
 * [Glossary](https://developers.google.com/machine-learning/glossary)
 * [Playground](http://playground.tensorflow.org/) - check how network learns with different parameters
-* [Repository of trained ML models](https://www.tensorflow.org/hub)
+* Repository of trained ML models:
+    * https://www.tensorflow.org/hub
+    * https://modelzoo.co/
+    * https://github.com/PaddlePaddle/PaddleHub
+    
 
 #### Best practices
 * [Rules of ML](https://developers.google.com/machine-learning/guides/rules-of-ml)
