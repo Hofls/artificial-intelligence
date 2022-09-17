@@ -6,7 +6,8 @@
     * Some cards have low ram, fix - `--medvram` (or `--lowvram`, but its very slow)
 * Edit `ui-config.json`, replace:
     * `512` with `448`
-    * `Batch size/value": 1,` with `Batch size/value": 2`
+    * `Batch size/value": 1,` with `Batch size/value": 2,`
+* Run, open [localhost](http://127.0.0.1:7860)
 
 ### Features
 ##### img2img
@@ -17,10 +18,14 @@
         * `Denoising strength` = 0.25 (recognizable) to 0.5 (heavily changed)
 * `Inpaint a part of image`
     * Parameters:
-        * `CFG Scale` = 7 to 30
-        * `Denoising strength` = 1.0
-* 
-* 
+        * `CFG Scale` = 7 to 30 (max)
+        * `Denoising strength` = 1.0 (max)
+* `SD upscale`
+    * `Upscaler` - anything but None
+    * `Denoising strength` - 0
+* `Script - Poor man's outpainting`
+    * `CFG Scale` = max
+    * `Denoising strength` = max
 * 
 
 ### Recipes:
