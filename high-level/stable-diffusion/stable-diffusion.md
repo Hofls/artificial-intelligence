@@ -7,7 +7,7 @@
 * Edit `ui-config.json`, replace:
     * `512` with `448`
     * `Batch size/value": 1,` with `Batch size/value": 2,`
-* Run, open [localhost](http://127.0.0.1:7860)
+* Run `webui-user.bat`, open [localhost](http://127.0.0.1:7860)
 
 ### Features
 ##### img2img
