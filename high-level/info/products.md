@@ -3,6 +3,7 @@
 * `OpenAI API`
     * `DALL-E` - images
     * `GPT-3` - text
+    * `ChatGPT` - all-knowing chat bot
 * `Meta AI`
     * `makeavideo` - text-to-video
 * `NovelAI` - AI-assisted storytelling (GPT based)
@@ -12,4 +13,4 @@
 * `DreamBooth` - makes text-to-image model very good at generating one specific subject
 * `Huggingface` - ML models demo
 * `AI Dungeon` - text based rpg
-* `AIVA` - music generator
+
