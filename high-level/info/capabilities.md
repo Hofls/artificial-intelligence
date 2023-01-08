@@ -1,6 +1,7 @@
 #### Text
-* Text summary; Facts on input - article on output; Search text based on the natural-language query;
+* Text summary; Facts on input - article on output; Search text via natural-language query;
 * Text translation; Convert poor english text to great one; Classify text (e.g. positive review/negative review)
+* Chatbot (one of first steps towards AGI); 
 
 #### Programming
 * Speech to bash (e.g. "Firewall all incoming connections to port 22")

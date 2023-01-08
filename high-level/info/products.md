@@ -1,5 +1,7 @@
 ## Products
 * `Stable Diffusion` - text-to-image, image-to-image
+    * `Lexica.art` - art gallery
+    * `Stable horde` - crowdsourced distributed cluster
 * `OpenAI API`
     * `DALL-E` - images
     * `GPT-3` - text
