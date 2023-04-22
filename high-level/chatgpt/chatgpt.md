@@ -16,3 +16,7 @@
 * Role prompting:
     * Ask gtp to act as a person (e.g. angry hiring manager, experienced psychologist, picky customer)
 
+### ChatGPT based products
+* `AutoGPT`, `Babyagi` - autonomous agent (makes plan to achieve goal, executes it step by step, checks if goal is achieved, goes to step 1)
+* 
+* 
