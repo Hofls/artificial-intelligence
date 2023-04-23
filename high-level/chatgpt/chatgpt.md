@@ -12,6 +12,7 @@
     * `Ask me clarifying questions before you answer to ensure a better understanding of the request`
 * Multiple rated answers:
     * `Write 5 different answers, rate each with probability of being correct` 
+* Ask GPT to generate prompts
 * Provide maximum information (reduces hallucinations chance)
 * Role prompting:
     * Ask gtp to act as a person (e.g. angry hiring manager, experienced psychologist, picky customer)
