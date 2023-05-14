@@ -9,6 +9,9 @@
     * `Stable horde` - crowdsourced distributed cluster
 * `Midjourney` - text-to-image
 
+## Alternative ways to access AI
+* `forefront.ai`, `poe.com`, `writesonic.com`, `you.com`, `sqlchat.ai`
+
 ## Other products
 * `copilot.github.com` - english to code
 * `Huggingface` - ML models demo
