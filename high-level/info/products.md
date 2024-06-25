@@ -1,5 +1,5 @@
 ### LLM (Chatbots)
-* `ChatGPT` - OpenAI LLM
+* `ChatGPT` - OpenAI LLM, custom GPTs (trained on a specific dataset), GPT + integration (e.g. with wolfram alpha)
 * `Gemini` - Google LLM
 * `DuckDuckGo AI Chat` - online access to Claude/ChatGPT/Llama/Mixtral
 * `llama2.ai` - Meta LLM
@@ -11,6 +11,7 @@
 * `claudi.ai` - requires mobile phone for registration
 
 ### Image generation
+* `zmo.ai` - image to image
 * `DALL-E`
 * `Stable Diffusion`
     * `Lexica.art` - art gallery
@@ -30,10 +31,5 @@
 * `AI Dungeon` - text based rpg
 
 ## Other products
-* `copilot.github.com` - english to code
-* `Huggingface` - ML models demo
-* `Meta AI`
-    * `makeavideo` - text-to-video
-* `NovelAI` - AI-assisted storytelling (GPT based)
-* `15.ai` - text-to-speech with voices of fictional characters
-* `DreamBooth` - makes text-to-image model very good at generating one specific subject
+* `Huggingface` - pre-trained models hub
+* `Kaggle` - pre-trained models hub
