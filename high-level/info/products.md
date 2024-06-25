@@ -16,6 +16,7 @@
     * `Lexica.art` - art gallery
     * `Stable horde` - crowdsourced distributed cluster
 * `Midjourney`
+* `Bing`
 
 ### Music generation
 * `Udio AI`
