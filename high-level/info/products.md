@@ -10,6 +10,10 @@
 * `poe.com` - GPT, Gemini, LLama, Claude, DALLE, Gemini, Stable Diffusion, Mistral, Qwen
 * `claudi.ai` - requires mobile phone for registration
 
+### AI voice chat (conversation)
+* `pi.ai`
+* `character.ai` - smartphone app
+
 ### Image generation
 * `zmo.ai` - image to image
 * `DALL-E`
