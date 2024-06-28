@@ -15,7 +15,6 @@
 * (Optional) Parameters
     * Parameters -> Preset -> Divine Intellect
     * Parameters -> Chat -> Character / User
-    * Chat -> Minimum reply length
 * Start typing, AI will continue text:
     * Notebook -> Raw -> Generate
     * For example:
@@ -27,5 +26,30 @@
 * Chat with Model:
     * Web UI -> Chat -> New Chat
 
+### Extensions
+* long_replies - adds "Minimum reply length" parameter on Chat/Notebook tab
+* openai - OpenAI rest API, [wiki](https://github.com/oobabooga/text-generation-webui/wiki/12-%E2%80%90-OpenAI-API)
+    * Request example:
+    ```
+    fetch('http://localhost:5000/v1/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          prompt: "This is a cake recipe:",
+          max_tokens: 200,
+          temperature: 1,
+          top_p: 0.9
+        })
+    });
+    ```
+
 ### Important parameters
-* 
+* temperature - randomness level 
+    * 0 - only most likely token is used
+    * 1 - average randomness
+    * 5 - full random, incoherent rambling
+* dry_multiplier - penalty for repetition
+    * 0 - AI will often repeat itself
+    * 5 - AI will never repeat itself
