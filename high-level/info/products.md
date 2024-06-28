@@ -8,7 +8,7 @@
 * `you.com`- GPT-4/Claude/Gemini with access to the internet
 * `hix.ai` - online access to Claude/ChatGPT
 * `poe.com` - GPT, Gemini, LLama, Claude, DALLE, Gemini, Stable Diffusion, Mistral, Qwen
-* `claudi.ai` - requires mobile phone for registration
+* `claude.ai` - requires phone number for registration
 
 ### AI voice chat (conversation)
 * `pi.ai`
