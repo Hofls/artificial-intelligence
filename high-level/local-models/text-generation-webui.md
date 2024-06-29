@@ -2,6 +2,7 @@
 
 ### Getting started
 * https://github.com/oobabooga/text-generation-webui
+    * Wiki - https://github.com/oobabooga/text-generation-webui/wiki
 * Download repository, run `start_windows.bat`
 * Pick huggingface model, for example https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-AWQ
 * Open Web UI - http://localhost:7860/?__theme=dark
