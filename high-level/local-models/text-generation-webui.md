@@ -13,7 +13,7 @@
     * cpu-memory in MiB = 2000
     * Model -> TheBloke/TinyLlama-1.1B-Chat-v0.3-AWQ -> Load
 * (Optional) Parameters
-    * Parameters -> Preset -> Divine Intellect
+    * Parameters -> Preset -> Divine Intellect (for instructions) / Midnight Enigma (for chat)
     * Parameters -> Chat -> Character / User
 * Start typing, AI will continue text:
     * Notebook -> Raw -> Generate
@@ -44,6 +44,12 @@
         })
     });
     ```
+  
+### Models
+* https://huggingface.co/TheBloke
+    * https://huggingface.co/TheBloke/TinyLlama-1.1B-Chat-v0.3-AWQ
+* https://huggingface.co/bartowski
+    * https://huggingface.co/bartowski/Meta-Llama-3-8B-Instruct-GGUF (Model loader - Llama.cpp)
 
 ### Important parameters
 * temperature - randomness level 
